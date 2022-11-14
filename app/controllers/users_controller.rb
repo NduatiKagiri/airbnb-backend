@@ -30,7 +30,7 @@ class UsersController < ApplicationController
             status: :unprocessable_entity
         end
     end
-    
+
     # DELETE /users/{username}
     def destroy
         user.destroy
@@ -38,11 +38,10 @@ class UsersController < ApplicationController
 
     private
     def user_params
-        params.permit(:username, :email, :password)
+        params.permit(:username, :email, :name)
     end
 
     def set_user
         @user = User.find(params[:id])
     end
 end
-
