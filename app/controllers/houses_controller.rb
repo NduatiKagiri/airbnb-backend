@@ -24,10 +24,8 @@ class HousesController < ApplicationController
 
     respond_to do |format|
       if @house.save
-        format.html { redirect_to house_url(@house), notice: 'House was successfully created.' }
-        format.json { render :show, status: :created, location: @house }
+        format.json { render json: @house, status: :created }
       else
-        format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @house.errors, status: :unprocessable_entity }
       end
     end
@@ -65,6 +63,7 @@ class HousesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def house_params
-    params.require(:house).permit(:name, :photo, :price, :location)
+    # params.require(:house).permit(:name, :photo, :price, :location)
+    params.permit(:name, :photo, :price, :location)
   end
 end

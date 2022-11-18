@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::API
+  include ActionController::MimeResponds
+
   include JsonWebToken
 
   before_action :authenticate_request
