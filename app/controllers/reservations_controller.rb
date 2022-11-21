@@ -3,7 +3,7 @@ class ReservationsController < ApplicationController
 
   # GET /reservations or /reservations.json
   def index
-    @reservations = Reservation.where(user_id: current_user.id)
+    @reservations = Reservation.where(user_id: @current_user.id)
     render json: @reservations
   end
 
@@ -21,14 +21,14 @@ class ReservationsController < ApplicationController
   # POST /reservations or /reservations.json
   def create
     @reservation = Reservation.new(reservation_params)
+    @reservation.user_id = @current_user.id
 
     respond_to do |format|
       if @reservation.save
-        format.html { redirect_to reservation_url(@reservation), notice: 'Reservation was successfully created.' }
-        format.json { render :show, status: :created, location: @reservation }
+        render json: @reservation, status: :created
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @reservation.errors, status: :unprocessable_entity }
+        render json: { errors: @reservation.errors.full_messages },
+             status: :unprocessable_entity
       end
     end
   end
