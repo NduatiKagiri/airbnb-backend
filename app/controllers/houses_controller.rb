@@ -24,11 +24,10 @@ class HousesController < ApplicationController
 
     respond_to do |format|
       if @house.save
-        format.html { redirect_to house_url(@house), notice: 'House was successfully created.' }
-        format.json { render :show, status: :created, location: @house }
+        render json: @house, status: :created
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @house.errors, status: :unprocessable_entity }
+        render json: { errors: @house.errors.full_messages },
+               status: :unprocessable_entity
       end
     end
   end

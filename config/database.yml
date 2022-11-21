@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: airbnb_backend_production
-  username: airbnb_backend
-  password: <%= ENV["AIRBNB_BACKEND_DATABASE_PASSWORD"] %>
+  database: nduatika_airbnb_backend_production
+  username: nduatika_nduatika
+  password: 8+Qhr8TR5b4u:G
