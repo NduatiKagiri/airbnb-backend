@@ -24,10 +24,9 @@ class HousesController < ApplicationController
 
     respond_to do |format|
       if @house.save
-        render json: @house, status: :created
+        render json: { house: @house, status: :created }
       else
-        render json: { errors: @house.errors.full_messages },
-               status: :unprocessable_entity
+        render json: { errors: @house.errors.full_messages, status: :unprocessable_entity }
       end
     end
   end

@@ -25,10 +25,9 @@ class ReservationsController < ApplicationController
 
     respond_to do |format|
       if @reservation.save
-        render json: @reservation, status: :created
+        render json: { reservation: @reservation, status: :created }
       else
-        render json: { errors: @reservation.errors.full_messages },
-             status: :unprocessable_entity
+        render json: { errors: @reservation.errors.full_messages, status: :unprocessable_entity }
       end
     end
   end
@@ -66,6 +65,6 @@ class ReservationsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def reservation_params
     # params.require(:reservation).permit(:date_in, :date_out)
-    params.permit(:date_in, :date_out)
+    params.permit(:date_in, :date_out, :house_id)
   end
 end
