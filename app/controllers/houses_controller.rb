@@ -22,7 +22,7 @@ class HousesController < ApplicationController
   def create
     @house = House.new(house_params)
 
-    respond_to do |format|
+    respond_to do |_format|
       if @house.save
         render json: { house: @house, status: :created }
       else

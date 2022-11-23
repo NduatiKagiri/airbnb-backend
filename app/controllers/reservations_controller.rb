@@ -23,7 +23,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @reservation.user_id = @current_user.id
 
-    respond_to do |format|
+    respond_to do |_format|
       if @reservation.save
         render json: { reservation: @reservation, status: :created }
       else
