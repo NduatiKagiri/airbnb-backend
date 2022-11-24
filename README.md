@@ -4,6 +4,12 @@
 AIRbnb is a website for renting airbnb. It allows users to register, see the available houses and make reservations.
 Things you may want to cover:
 
+## Links
+
+[@Frontend](https://airbnb.nduatikagiri.co.ke/)
+[@API documention](https://airbnb.nduatikagiri.co.ke/)
+
+
 ## Built With
 
 ### Client side
