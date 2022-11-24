@@ -18,8 +18,10 @@ Things you may want to cover:
  ### Database
  - PostgreSQL
 
-## Getting Started
-
+## Key Features
+- REST API
+- Authentication
+- API documentation
 
 ## Clone this repository
 
