@@ -4,7 +4,7 @@ info:
   title: API V1
   version: v1
 paths:
-  "/api/v1/add-house":
+  "/api/v1/houses":
     post:
       summary: Creates a house
       tags:
