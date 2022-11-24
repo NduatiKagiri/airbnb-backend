@@ -6,8 +6,8 @@ Things you may want to cover:
 
 ## Links
 
-[@Frontend](https://airbnb.nduatikagiri.co.ke/)
-[@API documention](https://airbnb.nduatikagiri.co.ke/)
+- [@Frontend](https://airbnb.nduatikagiri.co.ke/)
+- [@API documention](https://airbnb.nduatikagiri.co.ke/)
 
 
 ## Built With
