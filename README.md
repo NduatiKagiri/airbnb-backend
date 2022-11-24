@@ -1,3 +1,5 @@
+![](https://img.shields.io/badge/Microverse-blueviolet)
+
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -77,9 +79,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+[@Microverse](https://www.microverse.org/)
 
 ## 📝 License
 
