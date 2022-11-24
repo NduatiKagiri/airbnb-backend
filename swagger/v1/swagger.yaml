@@ -175,6 +175,101 @@ paths:
               - date_in
               - date_out
               - house
+  "/users/signup":
+    post:
+      summary: new registration
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              examples:
+                successfull_request:
+                  value:
+                    code: 201
+                    data:
+                      message: Signed up succesfully!
+                      user:
+                        id: 1
+                        name: string
+                        email: user@mail.com
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    email:
+                      type: string
+                      pattern: "^\\S+@\\S+\\.\\S+$"
+                      format: email
+                    username:
+                      type: string
+                  required:
+                  - name
+                  - email
+                  - username
+              required:
+              - user
+  "/users/login":
+    post:
+      summary: create session
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              examples:
+                successfull_login:
+                  value:
+                    code: 200
+                    data:
+                      user:
+                        id: 1
+                        name: User 1
+                      message: Logged in successfully.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    username:
+                      type: string
+                  required:
+                  - username
+  "/users/logout":
+    delete:
+      summary: delete session
+      tags:
+      - Users
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              examples:
+                succesful_logout:
+                  value:
+                    code: 200
+                    data:
+                      message: logged out successfully
 servers:
 - url: https://{defaultHost}
   variables:
