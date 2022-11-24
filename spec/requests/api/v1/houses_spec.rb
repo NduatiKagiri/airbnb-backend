@@ -2,23 +2,22 @@ require 'swagger_helper'
 
 RSpec.describe 'houses API' do
   path '/api/v1/houses' do
-
     post 'Creates a house' do
       tags 'houses'
       consumes 'application/json', 'application/xml'
       parameter name: :house, in: :body, schema: {
         type: :object,
         properties: {
-         name: { type: :string },
-            location: { type: :string },
-            price: { type: :integer },
-            photo: { type: :string }
+          name: { type: :string },
+          location: { type: :string },
+          price: { type: :integer },
+          photo: { type: :string }
         },
         required: %w[name location price photo]
       }
 
       response '201', 'house created' do
-        let(:house) { { name: 'foo', location: 'bar', photo: "photo", price: '100' } }
+        let(:house) { { name: 'foo', location: 'bar', photo: 'photo', price: '100' } }
         run_test!
       end
 
@@ -30,26 +29,24 @@ RSpec.describe 'houses API' do
   end
 
   path '/api/v1/houses/{id}' do
-
     get 'Retrieves a house' do
       tags 'Houses', 'Another Tag'
       produces 'application/json', 'application/xml'
       parameter name: :id, in: :path, type: :string
-    
 
       response '200', 'house found' do
         schema type: :object,
-          properties: {
-            id: { type: :integer },
-            name: { type: :string },
-            location: { type: :string },
-            price: { type: :integer },
-            photo: { type: :string }
-            
-          },
-          required: %w[id name lacation price photo]
+               properties: {
+                 id: { type: :integer },
+                 name: { type: :string },
+                 location: { type: :string },
+                 price: { type: :integer },
+                 photo: { type: :string }
 
-        let(:id) { House.create( name: 'foo', location: 'bar', photo: "photo", price: '100' ).id }
+               },
+               required: %w[id name lacation price photo]
+
+        let(:id) { House.create(name: 'foo', location: 'bar', photo: 'photo', price: '100').id }
         run_test!
       end
 

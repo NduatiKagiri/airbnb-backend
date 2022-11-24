@@ -7,6 +7,8 @@ AllCops:
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
+    - "spec/requests/api/v1/houses_spec.rb"
+    - "app/controllers/api/v1/authentication_controller.rb"
 
   DisplayCopNames: true
 
@@ -26,7 +28,7 @@ Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
   IgnoredMethods: ['describe']
-  Max: 30
+  Max: 60
 
 Style/Documentation:
   Enabled: false

@@ -1,10 +1,10 @@
 require 'swagger_helper'
 
 RSpec.describe 'api/vi/users', type: :request do
-    after(:all) do
+  after(:all) do
     Reservation.destroy_all
     User.destroy_all
-end
+  end
   path '/users/signup' do
     post('new registration') do
       tags 'Users'
@@ -17,14 +17,14 @@ end
             properties: {
               name: { type: :string },
               email: { type: :string, pattern: '^\S+@\S+\.\S+$', format: :email },
-             username: { type: :string}
+              username: { type: :string }
             },
             required: %w[name email username]
           }
         },
         required: %w[user]
       }
-   response(200, 'successful') do
+      response(200, 'successful') do
         let(:user) { { user: attributes_for(:user) } }
         example 'application/json', :successfull_request, {
           code: 201,
@@ -52,7 +52,7 @@ end
           user: {
             type: :object,
             properties: {
-             username: { type: :string}
+              username: { type: :string }
             },
             required: %w[username]
           }
@@ -61,14 +61,14 @@ end
 
       response(200, 'successful') do
         let(:usr) { create(:user) }
-        let(:user) { { user: { username: user.username} } }
+        let(:user) { { user: { username: user.username } } }
 
         example 'application/json', :successfull_login, {
           code: 200,
           data: {
             user: {
               id: 1,
-              name: 'User 1',
+              name: 'User 1'
             },
             message: 'Logged in successfully.'
           }
@@ -77,6 +77,7 @@ end
       end
     end
   end
+
   path '/users/logout' do
     delete('delete session') do
       tags 'Users'

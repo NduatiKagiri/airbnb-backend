@@ -7,7 +7,7 @@ RSpec.describe 'api/vi/reservations', type: :request do
   end
   let(:user) { create(:user) }
   let(:Authorization) { generate_jwt_token_for(user) }
- path '/reservations' do
+  path '/reservations' do
     get('list reservations') do
       tags 'Reservations'
       produces 'application/json'
@@ -34,7 +34,7 @@ RSpec.describe 'api/vi/reservations', type: :request do
         run_test!
       end
     end
-     post('create reservation') do
+    post('create reservation') do
       tags 'Reservations'
       consumes 'application/json'
       parameter name: :reservation, in: :body, schema: {

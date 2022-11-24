@@ -1,4 +1,4 @@
-class  Api::v1::AuthenticationController < ApplicationController
+class Api::v1::AuthenticationController < ApplicationController
   skip_before_action :authenticate_request
 
   # POST /auth/login
