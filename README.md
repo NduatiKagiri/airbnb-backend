@@ -55,13 +55,12 @@ A project to create the Ruby enumerable module.
 ## Kanban Board
 
 ### Link
-<!--  -->
-<!-- <!-- [GitHub Project](https://github.com/indigodavid/ezCar_backend/projects/1) --> -->
-<!--  -->
+
+[GitHub Project](https://github.com/NduatiKagiri/airbnb-backend/issues) 
+
 <!-- ### Initial State Project Link -->
-<!--  -->
-<!-- <!-- [GitHub First Issue](https://github.com/indigodavid/ezCar_backend/issues/22) --> -->
-<!--  -->
+[GitHub First Issue](https://github.com/NduatiKagiri/airbnb-backend/issues)
+
 ### Final Team members
 
 - John Nduati Kagiri
