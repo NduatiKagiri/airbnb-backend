@@ -49,6 +49,10 @@ A project to create the Ruby enumerable module.
 
 [Front-end Netlify Deployment](https://airbnb.nduatikagiri.co.ke//)
 
+[Back-end Heroku Deployment](https://fast-wildwood-74017.
+herokuapp.com/)
+
+
 ## Kanban Board
 
 ### Link
