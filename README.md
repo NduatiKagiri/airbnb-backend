@@ -7,7 +7,7 @@ Things you may want to cover:
 ## Links
 
 - [@Frontend](https://airbnb.nduatikagiri.co.ke/)
-- [@API documention](https://airbnb.nduatikagiri.co.ke/)
+- [@API documention](http://localhost:3000/api-docs/index.html)
 
 
 ## Built With
