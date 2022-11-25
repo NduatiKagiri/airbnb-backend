@@ -46,7 +46,7 @@ Things you may want to cover:
 
  - [Front-end Netlify Deployment](https://airbnb.nduatikagiri.co.ke//)
 
-[Back-end Heroku Deployment](https://fast-wildwood-74017.herokuapp.com/)
+ - [Back-end Heroku Deployment](https://fast-wildwood-74017.herokuapp.com/)
 
 
 ## Kanban Board
