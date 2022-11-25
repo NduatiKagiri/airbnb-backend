@@ -31,8 +31,8 @@ Things you may want to cover:
 
 ## Clone this repository
 
-  $ git@github.com:NduatiKagiri/enumerable.git
-  $ cd enumerable
+    - $ git@github.com:NduatiKagiri/enumerable.git
+    - $ cd enumerable
 
 ## Run Project
   $ Kali Rolling WSL
