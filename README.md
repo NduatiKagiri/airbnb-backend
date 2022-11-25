@@ -35,7 +35,7 @@ Things you may want to cover:
   $ cd enumerable
 
 ## Run Project
-  $ Kali Rolling WSL
+   Kali Rolling WSL
 
 ### Install
   $ rbenv install 3.0.1
