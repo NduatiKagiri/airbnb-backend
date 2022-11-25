@@ -44,7 +44,7 @@ Things you may want to cover:
 
 ### Deployment
 
-[Front-end Netlify Deployment](https://airbnb.nduatikagiri.co.ke//)
+ - [Front-end Netlify Deployment](https://airbnb.nduatikagiri.co.ke//)
 
 [Back-end Heroku Deployment](https://fast-wildwood-74017.herokuapp.com/)
 
