@@ -1,0 +1,277 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/houses":
+    post:
+      summary: Creates a house
+      tags:
+      - houses
+      parameters: []
+      responses:
+        '201':
+          description: house created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                location:
+                  type: string
+                price:
+                  type: integer
+                photo:
+                  type: string
+              required:
+              - name
+              - location
+              - price
+              - photo
+          application/xml:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                location:
+                  type: string
+                price:
+                  type: integer
+                photo:
+                  type: string
+              required:
+              - name
+              - location
+              - price
+              - photo
+  "/api/v1/houses/{id}":
+    get:
+      summary: Retrieves a house
+      tags:
+      - Houses
+      - Another Tag
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: house found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  location:
+                    type: string
+                  price:
+                    type: integer
+                  photo:
+                    type: string
+                required:
+                - id
+                - name
+                - lacation
+                - price
+                - photo
+            application/xml:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  location:
+                    type: string
+                  price:
+                    type: integer
+                  photo:
+                    type: string
+                required:
+                - id
+                - name
+                - lacation
+                - price
+                - photo
+        '404':
+          description: house not found
+        '406':
+          description: unsupported accept header
+  "/reservations":
+    get:
+      summary: list reservations
+      tags:
+      - Reservations
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              examples:
+                successful:
+                  value:
+                    code: 200
+                    data:
+                    - id: '1'
+                      type: reservation
+                      attributes:
+                        id: 1
+                        user_id: 1
+                        house_id: 1
+                        date_in: '2022-10-28'
+                        date_out: '2022-11-21'
+    post:
+      summary: create reservation
+      tags:
+      - Reservations
+      parameters: []
+      security:
+      - bearerAuth: []
+      responses:
+        '201':
+          description: successful
+          content:
+            application/json:
+              examples:
+                successful:
+                  value:
+                    code: 201
+                    data:
+                      id: 6
+                      date_in: '2022-10-28'
+                      date_out: '2022-11-21'
+                      house: house 1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                date_in:
+                  type: string
+                  format: date
+                date_out:
+                  type: string
+                  format: date
+                house:
+                  type: string
+              required:
+              - date_in
+              - date_out
+              - house
+  "/users/signup":
+    post:
+      summary: new registration
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              examples:
+                successfull_request:
+                  value:
+                    code: 201
+                    data:
+                      message: Signed up succesfully!
+                      user:
+                        id: 1
+                        name: string
+                        email: user@mail.com
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    email:
+                      type: string
+                      pattern: "^\\S+@\\S+\\.\\S+$"
+                      format: email
+                    username:
+                      type: string
+                  required:
+                  - name
+                  - email
+                  - username
+              required:
+              - user
+  "/users/login":
+    post:
+      summary: create session
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              examples:
+                successfull_login:
+                  value:
+                    code: 200
+                    data:
+                      user:
+                        id: 1
+                        name: User 1
+                      message: Logged in successfully.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    username:
+                      type: string
+                  required:
+                  - username
+  "/users/logout":
+    delete:
+      summary: delete session
+      tags:
+      - Users
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              examples:
+                succesful_logout:
+                  value:
+                    code: 200
+                    data:
+                      message: logged out successfully
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
