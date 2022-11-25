@@ -58,16 +58,8 @@ Things you may want to cover:
 <!-- ### Initial State Project Link -->
 [GitHub First Issue](https://github.com/NduatiKagiri/airbnb-backend/issues)
 
-### Final Team members
 
-- John Nduati Kagiri
-- Brenda Wihogora
-- Jesse Uzoma
-
-
-## Authors
-
-
+## 👤Authors
 
 👤 **Uzoma Jesse**
 
