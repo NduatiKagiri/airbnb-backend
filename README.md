@@ -1,36 +1,33 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
+# AIRbnb
+AIRbnb is a website for renting airbnb. It allows users to register, see the available houses and make reservations.
 Things you may want to cover:
 
-* Ruby version
+## Links
 
-* System dependencies
+- [@Frontend](https://airbnb.nduatikagiri.co.ke/)
+- [@API documention](https://airbnb.nduatikagiri.co.ke/)
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# Enurable
-
-A project to create the Ruby enumerable module.
 
 ## Built With
 
-- Ruby
+### Client side
+ - React.js & Redux
 
-## Getting Started
+ ### Server side
+ - Ruby on Rails
+ - JWT
+ - RSpec Rails
+ - Rswag
+
+ ### Database
+ - PostgreSQL
+
+## Key Features
+- REST API
+- Authentication
+- API documentation
 
 ## Clone this repository
 
@@ -106,12 +103,10 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Splash Background Image by [T. Kaiser](https://unsplash.com/@tkaiser)
-- Add Car Background Image by [Jorgen Hendriksen](https://unsplash.com/@jor9en)
-- Design inspired by [Murat Korkmaz](https://www.behance.net/muratk)
-- Hat tip to anyone whose code was used.
-- Inspiration.
-- Our supportive families and Microverse colleagues.
+
+[@Microverse](https://www.microverse.org/)
+[@stackoverflow](https://stackoverflow.com/)
+
 
 ## 📝 License
 
